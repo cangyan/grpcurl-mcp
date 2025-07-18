@@ -1,10 +1,9 @@
-module github.com/wricardo/grpcurl-mcp
+module github.com/cangyan/grpcurl-mcp
 
 go 1.23.0
 
 require (
-	github.com/davecgh/go-spew v1.1.1
-	github.com/fullstorydev/grpcurl v0.0.0-00010101000000-000000000000
+	github.com/fullstorydev/grpcurl v1.9.3
 	github.com/golang/protobuf v1.5.4
 	github.com/jhump/protoreflect v1.17.0
 	github.com/mark3labs/mcp-go v0.8.5
@@ -25,5 +24,3 @@ require (
 	golang.org/x/text v0.21.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20241202173237-19429a94021a // indirect
 )
-
-replace github.com/fullstorydev/grpcurl => github.com/wricardo/grpcurl v0.0.0-20250219163635-d00c28104be4

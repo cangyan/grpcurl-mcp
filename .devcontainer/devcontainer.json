@@ -1,0 +1,48 @@
+{
+  "name": "golang-dev",
+  "context": "..",
+  "dockerFile": "./Dockerfile",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": null,
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "editor.formatOnSave": true,
+        "code-runner.clearPreviousOutput": true,
+        "go.formatTool": "goimports",
+        "go.testFlags": [
+          "-v",
+          "-count=1"
+        ],
+        "go.lintTool": "golangci-lint",
+        "go.lintFlags": [
+          "--fast"
+        ],
+        "go.docsTool": "gogetdoc",
+        "go.useLanguageServer": true,
+        "go.inferGopath": true,
+        "eslint.enable": false,
+        "go.testEnvVars": {},
+        "go.toolsManagement.autoUpdate": true,
+        "[go]": {
+          "editor.defaultFormatter": "golang.go"
+        }
+      },
+      "extensions": [
+        "golang.go"
+      ]
+    }
+  },
+  "forwardPorts": [
+    12000,
+    12000
+  ],
+  // 可根据实际情况替换
+  "postCreateCommand": "go mod download",
+  // 路径可根据实际情况替换
+  "mounts": [
+    "source=/tmp,target=/data/logs/app,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.aws,target=/root/.aws,type=bind,consistency=cached"
+  ]
+}
